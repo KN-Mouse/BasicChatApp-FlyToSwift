@@ -37,6 +37,8 @@
 		C89D44082E98E4C70089373E /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
 		C89D44102E98E4C70089373E /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
 		C89D45432E98EB400089373E /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
+		C89D462F2E9B83A20089373E /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
+		C89D46C12E9BA4560089373E /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -154,6 +156,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C89D46312E9B83A20089373E /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C89D46C42E9BA4560089373E /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,6 +274,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = C89D46312E9B83A20089373E /* Products */;
+					ProjectRef = C89D462F2E9B83A20089373E /* Fly To.xcodeproj */;
+				},
+				{
 					ProductGroup = C89D422A2E93D6290089373E /* Products */;
 					ProjectRef = C89D42282E93D6290089373E /* Fly To.xcodeproj */;
 				},
@@ -300,6 +316,10 @@
 				{
 					ProductGroup = C89D44142E98E4C70089373E /* Products */;
 					ProjectRef = C89D44082E98E4C70089373E /* Fly To.xcodeproj */;
+				},
+				{
+					ProductGroup = C89D46C42E9BA4560089373E /* Products */;
+					ProjectRef = C89D46C12E9BA4560089373E /* Fly To.xcodeproj */;
 				},
 			);
 			projectRoot = "";
