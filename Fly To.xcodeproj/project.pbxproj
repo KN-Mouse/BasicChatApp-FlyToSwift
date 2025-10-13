@@ -39,6 +39,7 @@
 		C89D45432E98EB400089373E /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
 		C89D462F2E9B83A20089373E /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
 		C89D46C12E9BA4560089373E /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
+		C89D47DA2E9D30170089373E /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -166,6 +167,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C89D47DC2E9D30170089373E /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +286,10 @@
 				{
 					ProductGroup = C89D422A2E93D6290089373E /* Products */;
 					ProjectRef = C89D42282E93D6290089373E /* Fly To.xcodeproj */;
+				},
+				{
+					ProductGroup = C89D47DC2E9D30170089373E /* Products */;
+					ProjectRef = C89D47DA2E9D30170089373E /* Fly To.xcodeproj */;
 				},
 				{
 					ProductGroup = C89D41812E8F73C80089373E /* Products */;
