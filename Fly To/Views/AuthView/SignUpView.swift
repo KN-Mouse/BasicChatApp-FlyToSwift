@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
-
+import FirebaseAuth
+import FirebaseFirestore
 
 struct SignUpView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var authVM: AuthViewModel
     
     @State var name: String = ""
     @State var email: String = ""
@@ -33,7 +37,10 @@ struct SignUpView: View {
             }
             
             Button{
-                
+                Task {
+                    await authVM.SignUp(email: email, password: password, userName: name)
+                    dismiss()
+                }
             } label: {
                 Text("Sig Up")
                     .font(.headline)
@@ -52,4 +59,5 @@ struct SignUpView: View {
 
 #Preview {
     SignUpView()
+        .environmentObject(AuthViewModel())
 }

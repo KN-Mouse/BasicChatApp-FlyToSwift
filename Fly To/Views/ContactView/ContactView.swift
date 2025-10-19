@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContactView: View {
+    @EnvironmentObject var authVM: AuthViewModel
+    
     @State var text: String = ""
     var body: some View {
         VStack {
@@ -19,10 +21,13 @@ struct ContactView: View {
                 .cornerRadius(25)
             
             List {
-                ForEach(0..<30){i in
-                    HStack{
-                        Image(systemName: "person")
-                        Text("User name")
+                ForEach(authVM.allUser){user in
+                    if user.username != authVM.currentUser?.username{
+                        HStack{
+                            Image(systemName: "person")
+                            Text(user.username)
+                        }
+
                     }
                 }
             }
@@ -35,4 +40,5 @@ struct ContactView: View {
 
 #Preview {
     ContactView()
+        .environmentObject(AuthViewModel())
 }

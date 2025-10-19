@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct Fly_ToApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    @StateObject var authVM = AuthViewModel()
     var body: some Scene {
         WindowGroup {
-            LogInView()
+            WelcomeView()
+                .environmentObject(authVM)
         }
     }
 }

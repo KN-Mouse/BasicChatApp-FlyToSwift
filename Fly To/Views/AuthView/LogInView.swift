@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LogInView: View {
     
+    @EnvironmentObject var authVM: AuthViewModel
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -29,7 +30,9 @@ struct LogInView: View {
                 InputField(placeholder: "Pass word", text: $password, fill: .password)
               
                 Button {
-                    print("Login")
+                    Task {
+                        await authVM.LogIn(email: email, password: password)
+                    }
                 } label: {
                     Text("Login")
                         .font(.footnote)
@@ -61,4 +64,5 @@ struct LogInView: View {
 
 #Preview {
     LogInView()
+        .environmentObject(AuthViewModel())
 }
