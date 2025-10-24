@@ -42,7 +42,7 @@ struct SignUpView: View {
                     dismiss()
                 }
             } label: {
-                Text("Sig Up")
+                Text("Sign Up")
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding()

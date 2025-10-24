@@ -6,10 +6,21 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
 
 struct ChatRoomView: View {
     
-    @State var text: String = ""
+    @StateObject var MessVM: MessageViewModel
+    
+    let user: User
+    
+    init(user: User){
+        self.user = user
+        _MessVM = StateObject(wrappedValue: MessageViewModel(user: user))
+    }
+    
+
     var body: some View {
         VStack {
             ScrollViewReader { proxy in
@@ -19,39 +30,51 @@ struct ChatRoomView: View {
                     VStack {
                         Image(systemName: "person.fill")
                             .font(.system(size: 64))
-                        Text("User Name")
+                        Text(user.username)
                     }
                     .padding(.bottom, 50)
                     
     //                Content messages
-                    ForEach(0..<10){i in
+                    ForEach(MessVM.messages){mess in
                         HStack {
-                            if i % 2 == 0 {
+                            if mess.fromCurrentUser {
                                 Spacer()
-                                Text("Message")
+                                Text(mess.message)
                                     .font(.subheadline)
                                     .padding(12)
                                     .foregroundColor(.white)
                                     .background(.blue)
-                                    .clipShape(MessageCellBubble(fromCurrentUser: true))
+                                    .clipShape(MessageCellBubble(fromCurrentUser: mess.fromCurrentUser))
                                     .frame(maxWidth: UIScreen.main.bounds.width / 1.5, alignment: .trailing)
                                 
                             } else {
-                                HStack {
+                                HStack(alignment: .bottom, spacing: 8) {
                                     Image(systemName: "person")
-                                    Text("Message")
+                                    Text(mess.message)
                                         .font(.subheadline)
                                         .padding(12)
                                         .foregroundColor(.black)
                                         .background(.gray.opacity(0.2))
-                                        .clipShape(MessageCellBubble(fromCurrentUser: false))
+                                        .clipShape(MessageCellBubble(fromCurrentUser: mess.fromCurrentUser))
                                         .frame(maxWidth: UIScreen.main.bounds.width / 1.5, alignment: .leading)
-                                    Spacer()
                                 }
+                                
+                                Spacer()
                             }
                         }
+                        .id(mess.id)
+                        .padding(.bottom, 6)
+                        .padding(.horizontal, 8)
+                        
                       
                        
+                    }
+                }
+                .onChange(of: MessVM.messages.count){
+                    if let last = MessVM.messages.last {
+                        withAnimation{
+                            proxy.scrollTo(last.id, anchor: .bottom)
+                        }
                     }
                 }
                 
@@ -60,12 +83,12 @@ struct ChatRoomView: View {
                 Spacer()
                 
                 HStack {
-                    TextField("Type", text: $text)
+                    TextField("Type", text: $MessVM.text)
                         .padding()
                         .background(.gray.opacity(0.3))
                         .cornerRadius(20)
                     Button{
-                        
+                        MessVM.sendMessage()
                     } label: {
                         Image(systemName: "paperplane")
                             .font(.system(size: 30))
@@ -80,5 +103,5 @@ struct ChatRoomView: View {
 }
 
 #Preview {
-    ChatRoomView()
+    ChatRoomView(user: User.mockUser)
 }

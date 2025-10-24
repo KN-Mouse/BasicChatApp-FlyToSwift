@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		C876A74C2EA376FB000E3AEB /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
+		C876AA7E2EA8ABEF000E3AEB /* Fly To.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Fly To.xcodeproj"; sourceTree = "<group>"; };
 		C89D40CE2E8EA5B70089373E /* Fly To.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fly To.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C89D40DB2E8EA5B80089373E /* Fly ToTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fly ToTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C89D40E52E8EA5B80089373E /* Fly ToUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fly ToUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +103,11 @@
 
 /* Begin PBXGroup section */
 		C876A7512EA376FB000E3AEB /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C876AA832EA8ABEF000E3AEB /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -378,6 +384,10 @@
 				{
 					ProductGroup = C89D47DC2E9D30170089373E /* Products */;
 					ProjectRef = C89D47DA2E9D30170089373E /* Fly To.xcodeproj */;
+				},
+				{
+					ProductGroup = C876AA832EA8ABEF000E3AEB /* Products */;
+					ProjectRef = C876AA7E2EA8ABEF000E3AEB /* Fly To.xcodeproj */;
 				},
 				{
 					ProductGroup = C89D45492E98EB400089373E /* Products */;
