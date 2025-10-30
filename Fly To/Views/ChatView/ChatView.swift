@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ChatView: View {
+    @State var selectedUser: User?
+    
+    @EnvironmentObject var authVM: AuthViewModel
+    @StateObject var ReMessVM =  RecentMessageViewModel()
+    
     var body: some View {
         VStack {
 //            Ìnor
@@ -37,13 +42,21 @@ struct ChatView: View {
                 }
                 
                 
-                ForEach(0..<20){_ in
-                    HStack{
-                        Image(systemName: "person")
-                        Text("Message Content")
+                List {
+                    ForEach(ReMessVM.reMessage, id: \.message){ mess in
+                        HStack{
+                            Image(systemName: "person")
+                            VStack(alignment: .leading){
+                                Text(mess.user.username)
+                                Text(mess.message.message)
+                            }
+                            
+                        }
+                        .padding()
                     }
-                    .padding()
                 }
+                .listStyle(PlainListStyle())
+                .frame(height: UIScreen.main.bounds.height - 100)
             }
         }
         .padding()
@@ -52,4 +65,5 @@ struct ChatView: View {
 
 #Preview {
     ChatView()
+        .environmentObject(AuthViewModel())
 }

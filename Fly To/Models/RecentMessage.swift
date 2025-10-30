@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct RecentMessage: Identifiable, Hashable {
+    var id: String { message.id }
+    let message: Message
+    let user: User
+}
